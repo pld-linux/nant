@@ -35,7 +35,7 @@ NAnt jest narzêdziem wspomagaj±cym budowanie oprogramowania w ¶rodowisku
 %install
 rm -rf $RPM_BUILD_ROOT
 
-bootstrap/NAnt.exe -f:NAnt.build install-linux -D:install.prefix=$RPM_BUILD_ROOT%{_prefix}
+mono bootstrap/NAnt.exe -f:NAnt.build install-linux -D:install.prefix=$RPM_BUILD_ROOT%{_prefix}
 
 echo "#!/bin/sh" > $RPM_BUILD_ROOT%{_bindir}/nant
 echo 'exec mono %{_datadir}/NAnt/bin/NAnt.exe "$@"' >> $RPM_BUILD_ROOT%{_bindir}/nant
