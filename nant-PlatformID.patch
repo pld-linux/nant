@@ -1,0 +1,12 @@
+--- nant-0.85-rc2/src/NAnt.Core/PlatformHelper.cs	2005-01-03 15:54:56.000000000 +0100
++++ nant-0.85-rc2/src/NAnt.Core/PlatformHelper.cs	2005-01-03 15:54:56.000000000 +0100
+@@ -46,6 +46,9 @@
+                 IsWin32 = false;
+             }
+ 
++			if ((int) platformID == 128 || (int) platformID == 4)
++				IsUnix = true;
++
+             if (Environment.Version.Major == 1) {
+                 // on the Mono 1.0 profile, the value for unix is 128
+                 // (MS.NET 1.x does not have an enum field for unix)
