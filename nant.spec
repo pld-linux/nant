@@ -19,10 +19,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NAnt is a .NET based build tool. In theory it is kind of like make
 without make's wrinkles. In practice it's a lot like Ant.
 
-
 %description -l pl
-NAnt jest narzêdziem wspomagaj±cym budowanie oprogramowania w ¶rodowisku
-.NET.  Teoretycznie jest to lepsze ,,make''. W praktyce dzia³a jak Ant.
+NAnt jest narzêdziem wspomagaj±cym budowanie oprogramowania w
+¶rodowisku .NET. Teoretycznie jest to lepsze ,,make''. W praktyce
+dzia³a jak Ant.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_snap}
