@@ -1,4 +1,5 @@
-%define _snap rc2
+%define		_snap	20050621
+%define		_src	nightly-2005-06-21
 Summary:	A .NET based build tool 
 Summary(pl):	Narzêdzie do budowania pod .NET
 Name:		nant
@@ -6,12 +7,13 @@ Version:	0.85
 Release:	0.%{_snap}.1
 License:	GPL v2+
 Group:		Development/Building
-Source0:	http://dl.sourceforge.net/nant/nant-%{version}-%{_snap}-src.tar.gz
-# Source0-md5:	b1df647ea1f1fcf6c6f176a73ec2b760
-Patch0:		%{name}-xml_syntax.patch
-Patch1:		%{name}-PlatformID.patch
+#Source0:	http://dl.sourceforge.net/nant/nant-%{version}-%{_snap}-src.tar.gz
+Source0:	http://nant.sourceforge.net/nightly/2005-06-21-0.85/%{name}-src.tar.gz
+# Source0-md5:	35224e0d1eaa2f4db884ad1d817efb9d
 URL:		http://nant.sourceforge.net/
+BuildRequires:	mono-compat-links >= 1.1.4
 BuildRequires:	mono-csharp >= 1.1.4
+BuildRequires:	pkgconfig
 Requires:	mono-devel >= 1.1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,9 +27,7 @@ NAnt jest narzêdziem wspomagaj±cym budowanie oprogramowania w
 dzia³a jak Ant.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_snap}
-%patch0 -p1
-%patch1 -p1
+%setup -q -n %{name}-%{version}-%{_src}
 
 %build
 %{__make}
