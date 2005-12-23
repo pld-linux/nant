@@ -1,5 +1,9 @@
-%define		_snap	20050621
-%define		_src	nightly-2005-06-21
+%define		_lsnap	2005-12-13
+%define		_snap	%(echo %{_lsnap} |tr -d -)
+%define		_src	nightly-%{_lsnap}
+
+# generate not existant requires
+# %%include        /usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool 
 Summary(pl):	Narzêdzie do budowania pod .NET
 Name:		nant
@@ -8,8 +12,8 @@ Release:	0.%{_snap}.1
 License:	GPL v2+
 Group:		Development/Building
 #Source0:	http://dl.sourceforge.net/nant/nant-%{version}-%{_snap}-src.tar.gz
-Source0:	http://nant.sourceforge.net/nightly/2005-06-21-0.85/%{name}-src.tar.gz
-# Source0-md5:	35224e0d1eaa2f4db884ad1d817efb9d
+Source0:	http://nant.sourceforge.net/nightly/%{_lsnap}-%{version}/%{name}-src.tar.gz
+# Source0-md5:	eed9980f549f4a1d0163058393951dd7
 URL:		http://nant.sourceforge.net/
 BuildRequires:	mono-compat-links >= 1.1.4
 BuildRequires:	mono-csharp >= 1.1.4
