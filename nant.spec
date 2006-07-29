@@ -14,6 +14,7 @@ Group:		Development/Building
 #Source0:	http://dl.sourceforge.net/nant/nant-%{version}-%{_snap}-src.tar.gz
 Source0:	http://nant.sourceforge.net/nightly/%{_lsnap}-%{version}/%{name}-src.tar.gz
 # Source0-md5:	eed9980f549f4a1d0163058393951dd7
+Patch0:		%{name}-same-variable.patch
 URL:		http://nant.sourceforge.net/
 BuildRequires:	mono-compat-links >= 1.1.4
 BuildRequires:	mono-csharp >= 1.1.4
@@ -32,6 +33,7 @@ dzia³a jak Ant.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_src}
+%patch -p1
 
 %build
 %{__make}
