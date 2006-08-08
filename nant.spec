@@ -33,7 +33,7 @@ dzia³a jak Ant.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_src}
-%patch -p1
+%patch0 -p1
 
 %build
 %{__make}
