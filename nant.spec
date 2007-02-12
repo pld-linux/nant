@@ -5,7 +5,7 @@
 # generate not existant requires
 # %%include        /usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool
-Summary(pl):	Narzêdzie do budowania pod .NET
+Summary(pl.UTF-8):   NarzÄ™dzie do budowania pod .NET
 Name:		nant
 Version:	0.85
 Release:	0.%{_snap}.1
@@ -26,10 +26,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NAnt is a .NET based build tool. In theory it is kind of like make
 without make's wrinkles. In practice it's a lot like Ant.
 
-%description -l pl
-NAnt jest narzêdziem wspomagaj±cym budowanie oprogramowania w
-¶rodowisku .NET. Teoretycznie jest to lepsze ,,make''. W praktyce
-dzia³a jak Ant.
+%description -l pl.UTF-8
+NAnt jest narzÄ™dziem wspomagajÄ…cym budowanie oprogramowania w
+Å›rodowisku .NET. Teoretycznie jest to lepsze ,,make''. W praktyce
+dziaÅ‚a jak Ant.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_src}
