@@ -5,7 +5,7 @@
 # generate not existant requires
 # %%include        /usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool
-Summary(pl.UTF-8):   Narzędzie do budowania pod .NET
+Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
 Name:		nant
 Version:	0.85
 Release:	0.%{_snap}.1
