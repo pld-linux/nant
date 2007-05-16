@@ -1,20 +1,14 @@
-%define		_lsnap	2005-12-13
-%define		_snap	%(echo %{_lsnap} |tr -d -)
-%define		_src	nightly-%{_lsnap}
-
-# generate not existant requires
-# %%include        /usr/lib/rpm/macros.mono
+%include	/usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool
 Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
 Name:		nant
 Version:	0.85
-Release:	0.%{_snap}.1
+Release:	1
 License:	GPL v2+
 Group:		Development/Building
-#Source0:	http://dl.sourceforge.net/nant/nant-%{version}-%{_snap}-src.tar.gz
-Source0:	http://nant.sourceforge.net/nightly/%{_lsnap}-%{version}/%{name}-src.tar.gz
-# Source0-md5:	eed9980f549f4a1d0163058393951dd7
-Patch0:		%{name}-same-variable.patch
+Source0:	http://dl.sourceforge.net/nant/nant-%{version}-src.tar.gz
+# Source0-md5:	45ae065439b6cbc0e02051b855843f50
+Patch0:		%{name}-fix.patch
 URL:		http://nant.sourceforge.net/
 BuildRequires:	mono-compat-links >= 1.1.4
 BuildRequires:	mono-csharp >= 1.1.4
@@ -32,7 +26,7 @@ NAnt jest narzędziem wspomagającym budowanie oprogramowania w
 działa jak Ant.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_src}
+%setup -q
 %patch0 -p1
 
 %build
