@@ -29,16 +29,21 @@ działa jak Ant.
 %setup -q
 %patch0 -p1
 
+cat <<'EOF' > %{name}.sh
+#!/bin/sh
+exec mono %{_datadir}/NAnt/bin/NAnt.exe "$@"
+EOF
+
 %build
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+mono bootstrap/NAnt.exe \
+	-f:NAnt.build install-linux \
+	-D:install.prefix=$RPM_BUILD_ROOT%{_prefix}
 
-mono bootstrap/NAnt.exe -f:NAnt.build install-linux -D:install.prefix=$RPM_BUILD_ROOT%{_prefix}
-
-echo "#!/bin/sh" > $RPM_BUILD_ROOT%{_bindir}/nant
-echo 'exec mono %{_datadir}/NAnt/bin/NAnt.exe "$@"' >> $RPM_BUILD_ROOT%{_bindir}/nant
+install %{name}.sh $RPM_BUILD_ROOT%{_bindir}/nant
 
 %clean
 rm -rf $RPM_BUILD_ROOT
