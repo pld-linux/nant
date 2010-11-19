@@ -1,0 +1,4 @@
+- up to 0.90
+- %%{__make} -j1
+- more verbose files
+- drop obsoleted -fix.patch
