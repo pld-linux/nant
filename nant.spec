@@ -1,3 +1,6 @@
+#
+# TODO: make backward compatibility for mono-1.0 and mono-1.1 or drop this frameworks
+#
 %include	/usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool
 Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
