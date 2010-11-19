@@ -2,18 +2,17 @@
 Summary:	A .NET based build tool
 Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
 Name:		nant
-Version:	0.85
+Version:	0.90
 Release:	1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://dl.sourceforge.net/nant/nant-%{version}-src.tar.gz
-# Source0-md5:	45ae065439b6cbc0e02051b855843f50
-Patch0:		%{name}-fix.patch
+# Source0-md5:	1ba849249c6ff00062ac9ea90f729b20
 URL:		http://nant.sourceforge.net/
-BuildRequires:	mono-compat-links >= 1.1.4
-BuildRequires:	mono-csharp >= 1.1.4
+BuildRequires:	mono-compat-links >= 2.8
+BuildRequires:	mono-csharp >= 2.8
 BuildRequires:	pkgconfig
-Requires:	mono-devel >= 1.1.4
+Requires:	mono-devel >= 2.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,7 +26,6 @@ działa jak Ant.
 
 %prep
 %setup -q
-%patch0 -p1
 
 cat <<'EOF' > %{name}.sh
 #!/bin/sh
@@ -35,7 +33,7 @@ exec mono %{_datadir}/NAnt/bin/NAnt.exe "$@"
 EOF
 
 %build
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,5 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.txt doc/*
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/nant
 %{_datadir}/NAnt
