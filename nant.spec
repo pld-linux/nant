@@ -1,17 +1,16 @@
 #
 # TODO: make backward compatibility for mono-1.0 and mono-1.1 or drop this frameworks
 #
-%define		_alpha	alpha2
 %include	/usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool
 Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
 Name:		nant
-Version:	0.91
-Release:	0.%{_alpha}.1
+Version:	0.90
+Release:	1
 License:	GPL v2+
 Group:		Development/Building
-Source0:	http://dl.sourceforge.net/nant/nant-%{version}-%{_alpha}-src.tar.gz
-# Source0-md5:	7c06aad68f34a97d0a2d8487de60a5be
+Source0:	http://dl.sourceforge.net/nant/nant-%{version}-src.tar.gz
+# Source0-md5:	1ba849249c6ff00062ac9ea90f729b20
 URL:		http://nant.sourceforge.net/
 BuildRequires:	mono-compat-links >= 2.8
 BuildRequires:	mono-csharp >= 2.8
@@ -29,7 +28,7 @@ NAnt jest narzędziem wspomagającym budowanie oprogramowania w
 działa jak Ant.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_alpha}
+%setup -q
 
 cat <<'EOF' > %{name}.sh
 #!/bin/sh
