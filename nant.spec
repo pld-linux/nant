@@ -1,5 +1,6 @@
 #
-# TODO: make backward compatibility for mono-1.0 and mono-1.1 or drop this frameworks
+# TODO: make backward compatibility for mono-1.0 and mono-1.1 or drop these frameworks
+# note: mono 2.8 doesn't support .NET 1.0/1.1 any longer
 #
 %include	/usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool
@@ -9,7 +10,7 @@ Version:	0.90
 Release:	0.1
 License:	GPL v2+
 Group:		Development/Building
-Source0:	http://dl.sourceforge.net/nant/nant-%{version}-src.tar.gz
+Source0:	http://downloads.sourceforge.net/nant/nant-%{version}-src.tar.gz
 # Source0-md5:	1ba849249c6ff00062ac9ea90f729b20
 URL:		http://nant.sourceforge.net/
 BuildRequires:	mono-compat-links >= 2.8
@@ -54,3 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.txt doc/*
 %attr(755,root,root) %{_bindir}/nant
 %{_datadir}/NAnt
+%{_pkgconfigdir}/nant.pc
