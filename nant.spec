@@ -6,12 +6,12 @@
 Summary:	A .NET based build tool
 Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
 Name:		nant
-Version:	0.90
+Version:	0.91
 Release:	0.1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://downloads.sourceforge.net/nant/nant-%{version}-src.tar.gz
-# Source0-md5:	1ba849249c6ff00062ac9ea90f729b20
+# Source0-md5:	571e72813bdb3f0e8362403025445a61
 URL:		http://nant.sourceforge.net/
 BuildRequires:	mono-compat-links >= 2.8
 BuildRequires:	mono-csharp >= 2.8
