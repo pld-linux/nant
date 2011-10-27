@@ -7,7 +7,7 @@ Summary:	A .NET based build tool
 Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
 Name:		nant
 Version:	0.91
-Release:	0.1
+Release:	1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://downloads.sourceforge.net/nant/nant-%{version}-src.tar.gz
@@ -46,6 +46,8 @@ mono bootstrap/NAnt.exe \
 	-D:install.prefix=$RPM_BUILD_ROOT%{_prefix}
 
 install %{name}.sh $RPM_BUILD_ROOT%{_bindir}/nant
+
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/NAnt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
