@@ -2,7 +2,6 @@
 # TODO: make backward compatibility for mono-1.0 and mono-1.1 or drop these frameworks
 # note: mono 2.8 doesn't support .NET 1.0/1.1 any longer
 #
-%include	/usr/lib/rpm/macros.mono
 Summary:	A .NET based build tool
 Summary(pl.UTF-8):	Narzędzie do budowania pod .NET
 Name:		nant
